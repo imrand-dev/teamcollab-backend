@@ -43,6 +43,8 @@ urlpatterns = [
     ),
     # user
     path("api/users", include("accounts.rest.urls")),
+    # projects
+    path("api/projects", include("core.rest.urls")),
 ]
 
 if settings.DEBUG:

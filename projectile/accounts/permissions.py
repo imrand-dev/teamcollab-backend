@@ -6,4 +6,4 @@ class IsOwnerOrReadOnly(BasePermission):
         if request.method in ["GET", "HEAD", "OPTIONS"]:
             return True
 
-        return obj.owner == request.user
+        return obj == request.user

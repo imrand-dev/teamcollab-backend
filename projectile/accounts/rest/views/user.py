@@ -11,7 +11,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from accounts.models import User
 from accounts.rest.serializers.user import UserRegistrationSerializer
 from accounts.services.users import UserService
-from common.permissions import IsOwnerOrReadOnly
+from accounts.permissions import IsOwnerOrReadOnly
 
 
 class UserRegistration(CreateAPIView):
