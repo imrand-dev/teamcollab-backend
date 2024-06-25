@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==5.0.6"
+djangorestframework = "==3.15.2"
+markdown = "*"
+django-filter = "*"
+black = "*"
+flake8 = "*"
+drf-spectacular = "*"
+python-decouple = "*"
+django-dirtyfields = "*"
+django-cors-headers = "*"
+django-autoslug = "*"
+django-debug-toolbar = "*"
+djangorestframework-simplejwt = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
