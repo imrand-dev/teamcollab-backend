@@ -12,7 +12,7 @@ from core.rest.serializers.project import UserSerializer
 from core.models import Project
 
 
-class ProjectSerializer(serializers.ModelSerializer):
+class ProjectSerializerShort(serializers.ModelSerializer):
     class Meta:
         model = Project
         read_only_fields = fields = [
@@ -29,7 +29,7 @@ class TaskSerializer(serializers.ModelSerializer):
         write_only=True,
     )
 
-    project = ProjectSerializer(read_only=True)
+    project = ProjectSerializerShort(read_only=True)
     assigned_to = UserSerializer(read_only=True)
 
     class Meta:
