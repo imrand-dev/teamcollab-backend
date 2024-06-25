@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
 
 PROJECT_APPS = [
     "accounts.apps.AccountsConfig",
+    "core.apps.CoreConfig",
 ]
 
 MIDDLEWARE = [
