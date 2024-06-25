@@ -18,7 +18,6 @@ class Project(models.Model):
     owner = models.ForeignKey(
         to=User, on_delete=models.CASCADE, related_name="project_owner"
     )
-    # owner = models.OneToOneField(to=User, on_delete=models.CASCADE)
     slug = AutoSlugField(populate_from="name", editable=False, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

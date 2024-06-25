@@ -16,7 +16,11 @@ class TaskList(ListCreateAPIView):
 
     def get_queryset(self):
         project_uid = self.kwargs.get("project_uid")
-        project = Project.objects.get(uid=project_uid)
+        try:
+            project = Project.objects.get(uid=project_uid)
+        except Task.DoesNotExist:
+            raise NotFound(detail="Project doesn't exist")
+
         return Task.objects.filter(project=project)
 
 
@@ -31,9 +35,7 @@ class TaskDetail(RetrieveUpdateDestroyAPIView):
         try:
             return Task.objects.get(uid=task_uid)
         except Task.DoesNotExist:
-            raise NotFound(
-                detail="The requested Task doesn't exist or has been removed."
-            )
+            raise NotFound(detail="Task doesn't exist")
 
 
 class CommentList(ListCreateAPIView):

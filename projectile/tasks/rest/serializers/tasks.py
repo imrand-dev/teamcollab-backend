@@ -28,9 +28,7 @@ class TaskSerializer(serializers.ModelSerializer):
         required=False,
         write_only=True,
     )
-    # project_ = serializers.PrimaryKeyRelatedField(
-    #     queryset=Project.objects.all(), required=False
-    # )
+
     project = ProjectSerializer(read_only=True)
     assigned_to = UserSerializer(read_only=True)
 
